@@ -1,14 +1,13 @@
 import React from 'react';
-// --- 1. Import our new custom hook ---
 import { useReportGenerator } from '../hooks/useReportGenerator';
-
 import ReportForm from '../components/ReportForm';
 import ReportOutput from '../components/ReportOutput';
+import { FaRegClock, FaFileAlt } from 'react-icons/fa';
+import { FaWandMagicSparkles } from "react-icons/fa6";
 
-//import { FaRegClock, FaFileAlt, FaRobot } from 'react-icons/fa';
+
 
 export function HomePage() {
-    // --- 2. Call the hook to get all state and logic ---
     const {
         notes,
         setNotes,
@@ -19,12 +18,27 @@ export function HomePage() {
         error,
         handleGenerate,
     } = useReportGenerator();
-
     return (
         <>
             <div className="app-header">
-                <h1>{'\u2728'} Daily Standup Assistant</h1>
-                <p>Transform your messy daily notes into professional standup reports. Just write what you did, and we'll format it perfectly.</p>
+                <h1>
+                    Daily Standup Assistant
+                </h1>
+                <p className="subtitle">
+                    Transform your messy daily notes into professional standup reports. Just write what
+                    you did, and we'll format it perfectly.
+                </p>
+                <div className="header-tags">
+                    <span className="tag">
+                        <FaRegClock /> Saves time
+                    </span>
+                    <span className="tag">
+                        <FaFileAlt /> Professional format
+                    </span>
+                    <span className="tag">
+                        <FaWandMagicSparkles /> AI-powered
+                    </span>
+                </div>
             </div>
 
             <div className="app-container">
