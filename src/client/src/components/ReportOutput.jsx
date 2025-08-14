@@ -13,7 +13,7 @@ function downloadPDF(report) {
 
     const margin = 15; // Top, right, bottom, left margin
     const pageWidth = doc.internal.pageSize.getWidth();
-    const pageHeight = doc.internal.pageSize.getHeight();
+    //const pageHeight = doc.internal.pageSize.getHeight();
     const usableWidth = pageWidth - (margin * 2);
 
     // The key is to pass the text and options object with maxWidth

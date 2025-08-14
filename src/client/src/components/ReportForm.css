@@ -1,4 +1,4 @@
-﻿.report-form {
+﻿﻿.report-form {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -6,6 +6,7 @@
     padding: 20px;
     border-radius: 20px;
     box-sizing: border-box;
+    /* ❌ remove min-height */
 }
 
 .dropdown-container {
@@ -31,46 +32,46 @@
     transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-    .template-dropdown:focus {
-        border-color: #7b86f0;
-        box-shadow: 0 0 4px rgba(123, 134, 240, 0.4);
-    }
+.template-dropdown:focus {
+    border-color: #7b86f0;
+    box-shadow: 0 0 4px rgba(123, 134, 240, 0.4);
+}
 
 
 .form-label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 20px;
-  font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .notes-area {
     width: 100%;
     height: 300px;
-    padding: 1rem; 
-    border: 2px solid #ddd; 
-    border-radius: 12px; 
-    background-color: #f7f7f8; 
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #f7f7f8;
     box-sizing: border-box;
     resize: none;
     overflow: auto;
-    font-size: 14px; 
-    line-height: 1.6; 
-    color: #333; 
-    font-family: Arial, sans-serif; 
-    outline: none; 
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    font-family: Arial, sans-serif;
+    outline: none;
     transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 
 .notes-area:focus {
-    border-color: #7b86f0; 
+    border-color: #7b86f0;
     box-shadow: 0 0 4px rgba(123, 134, 240, 0.4);
 }
 
 .button-row {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
     margin-top: 1rem;
 }
 
@@ -105,9 +106,9 @@
     transition: background 0.2s ease-in-out;
 }
 
-    .reset-button:hover {
-        background: #f0f0f0;
-    }
+.reset-button:hover {
+    background: #f0f0f0;
+}
 
 .generate-button:hover {
     background-color: #3a3a3a;
@@ -122,9 +123,9 @@
 
 .how-it-works {
     margin-top: 20px;
-    background-color: #f5faff; /* light blue background */
-    border: 1px solid #cce4ff; /* light blue border */
-    color: #0056d2; /* blue text */
+    background-color: #f5faff;
+    border: 1px solid #cce4ff;
+    color: #0056d2;
     padding: 12px 16px;
     border-radius: 8px;
     font-size: 0.8rem;
@@ -133,7 +134,46 @@
 
 
 .how-it-works strong {
-     font-weight: 600;
-     color: #0041a8; /* darker blue for "How it works:" */
- }
+    font-weight: 600;
+    color: #0041a8;
+}
 
+
+
+
+
+.generate-button:disabled {
+    background-color: #868e96;
+    color: #e9ecef;
+    cursor: not-allowed;
+    opacity: 1; /* Override any default opacity for a solid look */
+}
+
+/* Make sure the button content is centered */
+.generate-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Space between loader/icon and text */
+}
+
+/* The CSS for the spinning loader animation */
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
