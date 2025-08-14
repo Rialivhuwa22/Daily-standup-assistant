@@ -1,0 +1,9 @@
+body {
+    background: #EEF4FF;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
