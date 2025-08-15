@@ -4,7 +4,7 @@ import ReportForm from '../components/ReportForm';
 import ReportOutput from '../components/ReportOutput';
 import { FaRegClock, FaFileAlt } from 'react-icons/fa';
 import { FaWandMagicSparkles } from "react-icons/fa6";
-
+import realmIcon from "../assets/realmIcon.png";
 
 
 export function HomePage() {
@@ -21,7 +21,7 @@ export function HomePage() {
     return (
         <>
             <div className="app-header">
-                <h1>
+                <h1> <img src={realmIcon} alt="My Icon" style={{ width: "50px", height: "50px" }} />
                     Daily Standup Assistant
                 </h1>
                 <p className="subtitle">

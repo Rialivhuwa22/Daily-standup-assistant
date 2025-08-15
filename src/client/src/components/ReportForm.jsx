@@ -23,8 +23,8 @@ const ReportForm = ({ notes, setNotes, handleGenerate, selectedTemplate, setSele
                     <option>Minimal Summary</option>
                 </select>
             </div>
-
-            <label className="form-label">Your Daily Notes</label>
+                    
+                    <label className="form-label">Your Daily Notes</label>
             <textarea
                 className="notes-area"
                 value={notes}

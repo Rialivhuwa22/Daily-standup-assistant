@@ -1,5 +1,5 @@
 body {
-    background: #EEF4FF;
+    background: white;
 }
 
 #header {
@@ -44,7 +44,7 @@ body {
 
 .app-header p {
     font-size: 1.1rem;
-    color: #555;
+    color: #100f0f;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -64,7 +64,34 @@ body {
     display: flex;
     flex-direction: column;
 }
+.subtitle {
+    font-size: 1.2rem;       /* slightly larger text */
+    line-height: 1.6;        /* adds space between lines */
+    margin-top: 0.5rem;      /* space below the h1 */
+    margin-bottom: 1rem;     /* space above the tags */
+    color: #333;             /* dark text color */
+}
 
+
+    .header-tags {
+        display: flex;           /* place tags in a row */
+        gap: 1rem;               /* space between each tag */
+        flex-wrap: wrap;         /* wrap tags on smaller screens */
+        justify-content: center; /* center the tags horizontally */
+        margin-top: 0.5rem;
+    }
+
+.tag {
+    display: flex;           /* align icon and text */
+    align-items: center;
+    gap: 0.5rem;             /* space between icon and text */
+    padding: 0.4rem 0.8rem;  /* some padding around the tag */
+    background-color: #f3983b; /* light gray background */
+    border-radius: 8px;      /* rounded corners */
+    font-size: 0.9rem;       /* slightly smaller than subtitle */
+    color: white;          /* tag text color */
+    font-weight: 500;
+}
 
 .feature-tags {
     display: flex;
@@ -78,7 +105,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: #ffffff;
+    background-color: #b1763a;
     color: #374151;
     padding: 6px 14px;
     border-radius: 16px;

@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Daily Standup Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that helps developers quickly turn messy daily notes into professional, structured standup reports using AI-powered paraphrasing.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [API](#api)
+- [Contributing](#contributing)
+- [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
+- Paraphrase daily notes into a professional paragraph.
+- Generate structured **Problem, Action, Result** sections.
+- AI-powered summarization using **OpenAI Chat API**.
+- Download reports as PDF.
+- Supports short or even minimal notes like `"nothing"`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- **React.js** – UI library for building interactive components.
+- **React Icons** – for displaying icons in the UI.
+- **TailwindCSS / Custom CSS** – for styling components.
+- **jsPDF** – for generating downloadable PDF reports.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- **ASP.NET Core Web API (C#)** – serves the report generation endpoint.
+- **OpenAI .NET SDK** – connects to OpenAI’s API for paraphrasing.
+- **Dependency Injection** – to manage services cleanly.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### API
+- **POST `/api/report`** – accepts user notes and returns:
+  ```json
+  {
+    "paragraph": "Expanded, professional version of notes.",
+    "problem": "Problem section extracted from notes.",
+    "action": "Action section extracted from notes.",
+    "result": "Result section extracted from notes."
+  }
+Handles short notes, blank input, or "nothing" to always return a meaningful report.
 
-### `npm run eject`
+Getting Started
+Prerequisites
+Node.js (v18+)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+.NET SDK (v7+)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+An OpenAI API key
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Frontend
+bash
+Copy
+Edit
+cd src/client
+npm install
+npm start
+Backend
+bash
+Copy
+Edit
+cd src/server
+dotnet restore
+dotnet run
+Usage
+Open the app in your browser (usually http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Write your daily notes in the textarea (short notes).
 
-## Learn More
+Click Generate Report.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+View the generated paragraph and structured Problem, Action, Result.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Download the report as PDF if needed.
 
-### Code Splitting
+Contributing
+Fork the repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Create a new branch: git checkout -b feature/your-feature
 
-### Analyzing the Bundle Size
+Make your changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Commit: git commit -m 'Add some feature'
 
-### Making a Progressive Web App
+Push: git push origin feature/your-feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open a pull request.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

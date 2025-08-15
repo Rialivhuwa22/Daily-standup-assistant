@@ -2,7 +2,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: #27394a;
     padding: 20px;
     border-radius: 20px;
     box-sizing: border-box;
@@ -10,7 +10,9 @@
 }
 
 .dropdown-container {
+    color: white;
     margin-bottom: 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -20,21 +22,24 @@
     font-weight: bold;
     font-size: 20px;
 }
-
+.form-label{
+    color: white;
+    font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .template-dropdown {
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid #ddd;
-    background-color: #f7f7f8;
+    border: 1px solid #a56d34;
+    background-color: #27394a;
     font-size: 14px;
-    color: #333;
+    color: #ffffff;
     outline: none;
     transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .template-dropdown:focus {
-    border-color: #7b86f0;
-    box-shadow: 0 0 4px rgba(123, 134, 240, 0.4);
+    border-color: #27394a;
+    box-shadow: 0 0 4px rgb(165, 109, 52);
 }
 
 
@@ -49,15 +54,15 @@
     width: 100%;
     height: 300px;
     padding: 1rem;
-    border: 2px solid #ddd;
+    border: 2px solid #a56d34;
     border-radius: 12px;
-    background-color: #f7f7f8;
+    background-color: #27394a;
     box-sizing: border-box;
     resize: none;
     overflow: auto;
     font-size: 14px;
     line-height: 1.6;
-    color: #333;
+    color: ghostwhite;
     font-family: Arial, sans-serif;
     outline: none;
     transition: border 0.2s ease, box-shadow 0.2s ease;
@@ -65,8 +70,8 @@
 
 
 .notes-area:focus {
-    border-color: #7b86f0;
-    box-shadow: 0 0 4px rgba(123, 134, 240, 0.4);
+    border-color: #a56d34;
+    box-shadow: 0 0 4px rgb(39, 57, 74);
 }
 
 .button-row {
@@ -78,8 +83,8 @@
 .generate-button {
     flex: 1;
     padding: 8px;
-    background-color: #4b4b4b;
-    color: white;
+    background-color: #f3983b;
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -111,11 +116,11 @@
 }
 
 .generate-button:hover {
-    background-color: #3a3a3a;
+    background-color: #a56d34;
 }
 
 .generate-button:disabled {
-    background-color: #aaa;
+    background-color: #a56d34;
     cursor: not-allowed;
 }
 
@@ -123,9 +128,9 @@
 
 .how-it-works {
     margin-top: 20px;
-    background-color: #f5faff;
-    border: 1px solid #cce4ff;
-    color: #0056d2;
+    background-color: #27394a;
+    border: 1px solid #a56d34;
+    color: #ffffff;
     padding: 12px 16px;
     border-radius: 8px;
     font-size: 0.8rem;
@@ -135,12 +140,8 @@
 
 .how-it-works strong {
     font-weight: 600;
-    color: #0041a8;
+    color: #ffffff;
 }
-
-
-
-
 
 .generate-button:disabled {
     background-color: #868e96;
