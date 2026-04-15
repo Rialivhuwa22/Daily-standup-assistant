@@ -7,15 +7,26 @@ import ReportOutput from './components/ReportOutput';
 function App() {
     const [notes, setNotes] = useState("");
     const [report, setReport] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [selectedTemplate, setSelectedTemplate] = useState('Detailed Report');
 
     const generateReport = async () => {
-        const res = await fetch('http://localhost:5183/api/report', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(notes)
-        });
-        const data = await res.json();
-        setReport(data.text);
+        if (!notes.trim()) return;
+        setIsLoading(true);
+        try {
+            const res = await fetch('http://localhost:5183/api/report', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ Notes: notes })
+            });
+            const data = await res.json();
+            setReport(data.generatedReport);
+        } catch (err) {
+            console.error(err);
+            setReport(`Error: ${err.message}`);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -32,6 +43,9 @@ function App() {
                     notes={notes}
                     setNotes={setNotes}
                     handleGenerate={generateReport}
+                    selectedTemplate={selectedTemplate}
+                    setSelectedTemplate={setSelectedTemplate}
+                    isLoading={isLoading}
                 />
                 <ReportOutput report={report} />
             </div>
